@@ -1,6 +1,6 @@
 plugins {
-    id 'com.android.application'
     id 'com.google.gms.google-services'
+    id 'com.android.application' version '7.3.1'
 }
 
 android {
@@ -44,4 +44,3 @@ dependencies {
     implementation 'com.android.support:design:28.+'
     implementation 'com.rengwuxian.materialedittext:library:2.1.4'
     implementation 'uk.co.chrisjenx:calligraphy:2.3.0'
-}
