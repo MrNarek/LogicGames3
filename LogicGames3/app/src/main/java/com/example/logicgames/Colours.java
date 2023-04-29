@@ -13,10 +13,11 @@ import android.widget.TextView;
 import java.util.Random;
 
 public class Colours extends AppCompatActivity {
-    TextView timer, points, clText, clColor;
+    TextView timer, points, clText, clColor, fails;
     Button btnYes, btnNo;
     boolean isTimerTicking = true;
     int pts = 0;
+    int fls = 3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +29,8 @@ public class Colours extends AppCompatActivity {
         btnNo = findViewById(R.id.btnNo);
         btnYes = findViewById(R.id.bynYes);
         points = findViewById(R.id.points);
+        fails = findViewById(R.id.fails);
+
 
         new CountDownTimer(30000, 1000) {
             @Override
@@ -46,10 +49,14 @@ public class Colours extends AppCompatActivity {
 
         String[] clTexts = {"Красный", "Зеленый", "Синий", "Желтый", "Черный"};
         String[] clColors = {"#FF0000", "#00FF00", "#0000FF", "#FFFF00", "#000000"};
-        clText.setText(clTexts[0]);
-        clText.setTextColor(Color.parseColor(clColors[0]));
-        clColor.setText(clTexts[1]);
-        clColor.setTextColor(Color.parseColor(clColors[0]));
+        int rnd = new Random().nextInt(clTexts.length);
+        clText.setText(clTexts[rnd]);
+        rnd = new Random().nextInt(clTexts.length);
+        clText.setTextColor(Color.parseColor(clColors[rnd]));
+        rnd = new Random().nextInt(clTexts.length);
+        clColor.setText(clTexts[rnd]);
+        rnd = new Random().nextInt(clTexts.length);
+        clColor.setTextColor(Color.parseColor(clColors[rnd]));
         Random random = new Random();
         btnYes.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -109,6 +116,22 @@ public class Colours extends AppCompatActivity {
                     clColor.setText(clTexts[rnd]);
                     rnd = new Random().nextInt(clTexts.length);
                     clColor.setTextColor(Color.parseColor(clColors[rnd]));
+                } else {
+                    if (fls == 0) {
+                        Intent intent1 = new Intent(Colours.this, GuestMode.class);
+                        startActivity(intent1);
+                    } else {
+                        fls -= 1;
+                        fails.setText(" " + fls);
+                        int rnd = new Random().nextInt(clTexts.length);
+                        clText.setText(clTexts[rnd]);
+                        rnd = new Random().nextInt(clTexts.length);
+                        clText.setTextColor(Color.parseColor(clColors[rnd]));
+                        rnd = new Random().nextInt(clTexts.length);
+                        clColor.setText(clTexts[rnd]);
+                        rnd = new Random().nextInt(clTexts.length);
+                        clColor.setTextColor(Color.parseColor(clColors[rnd]));
+                    }
                 }
             }
         });
@@ -171,6 +194,22 @@ public class Colours extends AppCompatActivity {
                     clColor.setText(clTexts[rnd]);
                     rnd = new Random().nextInt(clTexts.length);
                     clColor.setTextColor(Color.parseColor(clColors[rnd]));
+                } else {
+                    if (fls == 0) {
+                        Intent intent1 = new Intent(Colours.this, GuestMode.class);
+                        startActivity(intent1);
+                    } else {
+                        fls -= 1;
+                        fails.setText(" " + fls);
+                        int rnd = new Random().nextInt(clTexts.length);
+                        clText.setText(clTexts[rnd]);
+                        rnd = new Random().nextInt(clTexts.length);
+                        clText.setTextColor(Color.parseColor(clColors[rnd]));
+                        rnd = new Random().nextInt(clTexts.length);
+                        clColor.setText(clTexts[rnd]);
+                        rnd = new Random().nextInt(clTexts.length);
+                        clColor.setTextColor(Color.parseColor(clColors[rnd]));
+                    }
                 }
             }
         });
