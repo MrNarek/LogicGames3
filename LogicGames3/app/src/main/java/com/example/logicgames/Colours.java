@@ -25,6 +25,9 @@ public class Colours extends AppCompatActivity {
         timer = findViewById(R.id.timer);
         clText = findViewById(R.id.clText);
         clColor = findViewById(R.id.clColor);
+        btnNo = findViewById(R.id.btnNo);
+        btnYes = findViewById(R.id.bynYes);
+        points = findViewById(R.id.points);
 
         new CountDownTimer(30000, 1000) {
             @Override
@@ -41,111 +44,135 @@ public class Colours extends AppCompatActivity {
             }
         }.start();
 
-        String[] clTexts = {"Красный", "Зеленый", "Синий", "Желтый", "Черный", "Фиолетовый"};
-        String[] clColors = {"#FF0000", "#00FF00", "#0000FF", "#FFFF00", "#000000", "#800080"};
+        String[] clTexts = {"Красный", "Зеленый", "Синий", "Желтый", "Черный"};
+        String[] clColors = {"#FF0000", "#00FF00", "#0000FF", "#FFFF00", "#000000"};
         clText.setText(clTexts[0]);
         clText.setTextColor(Color.parseColor(clColors[0]));
         clColor.setText(clTexts[1]);
-        clColor.setTextColor(Color.parseColor(clColors[1]));
+        clColor.setTextColor(Color.parseColor(clColors[0]));
         Random random = new Random();
-        int rnuml;
-        while (isTimerTicking) {
-            btnYes.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    if (clText.getText().toString() == "Красный" && clColor.getCurrentTextColor() == 0xff0000) {
-                        points.setText(pts += 1);
-                        clText.setText(clTexts[random.nextInt(0) + clTexts.length - 1]);
-                        clText.setTextColor(Color.parseColor(clColors[random.nextInt(0) + clTexts.length - 1]));
-                        clColor.setText(clTexts[random.nextInt(0) + clTexts.length - 1]);
-                        clColor.setTextColor(Color.parseColor(clColors[random.nextInt(0) + clTexts.length - 1]));
-                    } else if (clText.getText().toString() == "Зеленый" && clColor.getCurrentTextColor() == 0x00ff00) {
-                        points.setText(pts += 1);
-                        clText.setText(clTexts[random.nextInt(0) + clTexts.length - 1]);
-                        clText.setTextColor(Color.parseColor(clColors[random.nextInt(0) + clTexts.length - 1]));
-                        clColor.setText(clTexts[random.nextInt(0) + clTexts.length - 1]);
-                        clColor.setTextColor(Color.parseColor(clColors[random.nextInt(0) + clTexts.length - 1]));
-                    } else if (clText.getText().toString() == "Синий" && clColor.getCurrentTextColor() == 0x0000ff) {
-                        points.setText(pts += 1);
-                        clText.setText(clTexts[random.nextInt(0) + clTexts.length - 1]);
-                        clText.setTextColor(Color.parseColor(clColors[random.nextInt(0) + clTexts.length - 1]));
-                        clColor.setText(clTexts[random.nextInt(0) + clTexts.length - 1]);
-                        clColor.setTextColor(Color.parseColor(clColors[random.nextInt(0) + clTexts.length - 1]));
-                    } else if (clText.getText().toString() == "Желтый" && clColor.getCurrentTextColor() == 0xffff00) {
-                        points.setText(pts += 1);
-                        clText.setText(clTexts[random.nextInt(0) + clTexts.length - 1]);
-                        clText.setTextColor(Color.parseColor(clColors[random.nextInt(0) + clTexts.length - 1]));
-                        clColor.setText(clTexts[random.nextInt(0) + clTexts.length - 1]);
-                        clColor.setTextColor(Color.parseColor(clColors[random.nextInt(0) + clTexts.length - 1]));
-                    } else if (clText.getText().toString() == "Черный" && clColor.getCurrentTextColor() == 0x000000) {
-                        points.setText(pts += 1);
-                        clText.setText(clTexts[random.nextInt(0) + clTexts.length - 1]);
-                        clText.setTextColor(Color.parseColor(clColors[random.nextInt(0) + clTexts.length - 1]));
-                        clColor.setText(clTexts[random.nextInt(0) + clTexts.length - 1]);
-                        clColor.setTextColor(Color.parseColor(clColors[random.nextInt(0) + clTexts.length - 1]));
-                    } else if (clText.getText().toString() == "Фиолетовый" && clColor.getCurrentTextColor() == 0x800080) {
-                        points.setText(pts += 1);
-                        clText.setText(clTexts[random.nextInt(0) + clTexts.length - 1]);
-                        clText.setTextColor(Color.parseColor(clColors[random.nextInt(0) + clTexts.length - 1]));
-                        clColor.setText(clTexts[random.nextInt(0) + clTexts.length - 1]);
-                        clColor.setTextColor(Color.parseColor(clColors[random.nextInt(0) + clTexts.length - 1]));
-                    } else {
-                        clText.setText(clTexts[random.nextInt(0) + clTexts.length - 1]);
-                        clText.setTextColor(Color.parseColor(clColors[random.nextInt(0) + clTexts.length - 1]));
-                        clColor.setText(clTexts[random.nextInt(0) + clTexts.length - 1]);
-                        clColor.setTextColor(Color.parseColor(clColors[random.nextInt(0) + clTexts.length - 1]));
-                    }
-
-
-                    btnNo.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            if (clText.getText().toString() == "Красный" && clColor.getCurrentTextColor() != 0xff0000) {
-                                points.setText(pts += 1);
-                                clText.setText(clTexts[random.nextInt(0) + clTexts.length - 1]);
-                                clText.setTextColor(Color.parseColor(clColors[random.nextInt(0) + clTexts.length - 1]));
-                                clColor.setText(clTexts[random.nextInt(0) + clTexts.length - 1]);
-                                clColor.setTextColor(Color.parseColor(clColors[random.nextInt(0) + clTexts.length - 1]));
-                            } else if (clText.getText().toString() == "Зеленый" && clColor.getCurrentTextColor() != 0x00ff00) {
-                                points.setText(pts += 1);
-                                clText.setText(clTexts[random.nextInt(0) + clTexts.length - 1]);
-                                clText.setTextColor(Color.parseColor(clColors[random.nextInt(0) + clTexts.length - 1]));
-                                clColor.setText(clTexts[random.nextInt(0) + clTexts.length - 1]);
-                                clColor.setTextColor(Color.parseColor(clColors[random.nextInt(0) + clTexts.length - 1]));
-                            } else if (clText.getText().toString() == "Синий" && clColor.getCurrentTextColor() != 0x0000ff) {
-                                points.setText(pts += 1);
-                                clText.setText(clTexts[random.nextInt(0) + clTexts.length - 1]);
-                                clText.setTextColor(Color.parseColor(clColors[random.nextInt(0) + clTexts.length - 1]));
-                                clColor.setText(clTexts[random.nextInt(0) + clTexts.length - 1]);
-                                clColor.setTextColor(Color.parseColor(clColors[random.nextInt(0) + clTexts.length - 1]));
-                            } else if (clText.getText().toString() == "Желтый" && clColor.getCurrentTextColor() != 0xffff00) {
-                                points.setText(pts += 1);
-                                clText.setText(clTexts[random.nextInt(0) + clTexts.length - 1]);
-                                clText.setTextColor(Color.parseColor(clColors[random.nextInt(0) + clTexts.length - 1]));
-                                clColor.setText(clTexts[random.nextInt(0) + clTexts.length - 1]);
-                                clColor.setTextColor(Color.parseColor(clColors[random.nextInt(0) + clTexts.length - 1]));
-                            } else if (clText.getText().toString() == "Черный" && clColor.getCurrentTextColor() != 0x000000) {
-                                points.setText(pts += 1);
-                                clText.setText(clTexts[random.nextInt(0) + clTexts.length - 1]);
-                                clText.setTextColor(Color.parseColor(clColors[random.nextInt(0) + clTexts.length - 1]));
-                                clColor.setText(clTexts[random.nextInt(0) + clTexts.length - 1]);
-                                clColor.setTextColor(Color.parseColor(clColors[random.nextInt(0) + clTexts.length - 1]));
-                            } else if (clText.getText().toString() == "Фиолетовый" && clColor.getCurrentTextColor() != 0x800080) {
-                                points.setText(pts += 1);
-                                clText.setText(clTexts[random.nextInt(0) + clTexts.length - 1]);
-                                clText.setTextColor(Color.parseColor(clColors[random.nextInt(0) + clTexts.length - 1]));
-                                clColor.setText(clTexts[random.nextInt(0) + clTexts.length - 1]);
-                                clColor.setTextColor(Color.parseColor(clColors[random.nextInt(0) + clTexts.length - 1]));
-                            } else {
-                                clText.setText(clTexts[random.nextInt(0) + clTexts.length - 1]);
-                                clText.setTextColor(Color.parseColor(clColors[random.nextInt(0) + clTexts.length - 1]));
-                                clColor.setText(clTexts[random.nextInt(0) + clTexts.length - 1]);
-                                clColor.setTextColor(Color.parseColor(clColors[random.nextInt(0) + clTexts.length - 1]));
-                            }
-                        }
-                    });
+        btnYes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (clText.getText().toString().equals(clTexts[0]) && clColor.getCurrentTextColor() == Color.RED) {
+                    pts += 1;
+                    points.setText(" " + (pts));
+                    int rnd = new Random().nextInt(clTexts.length);
+                    clText.setText(clTexts[rnd]);
+                    rnd = new Random().nextInt(clTexts.length);
+                    clText.setTextColor(Color.parseColor(clColors[rnd]));
+                    rnd = new Random().nextInt(clTexts.length);
+                    clColor.setText(clTexts[rnd]);
+                    rnd = new Random().nextInt(clTexts.length);
+                    clColor.setTextColor(Color.parseColor(clColors[rnd]));
+                } else if (clText.getText().toString().equals(clTexts[1]) && clColor.getCurrentTextColor() == Color.GREEN) {
+                    pts += 1;
+                    points.setText(" " + (pts));
+                    int rnd = new Random().nextInt(clTexts.length);
+                    clText.setText(clTexts[rnd]);
+                    rnd = new Random().nextInt(clTexts.length);
+                    clText.setTextColor(Color.parseColor(clColors[rnd]));
+                    rnd = new Random().nextInt(clTexts.length);
+                    clColor.setText(clTexts[rnd]);
+                    rnd = new Random().nextInt(clTexts.length);
+                    clColor.setTextColor(Color.parseColor(clColors[rnd]));
+                } else if (clText.getText().toString().equals(clTexts[2]) && clColor.getCurrentTextColor() == Color.BLUE) {
+                    pts += 1;
+                    points.setText(" " + (pts));
+                    int rnd = new Random().nextInt(clTexts.length);
+                    clText.setText(clTexts[rnd]);
+                    rnd = new Random().nextInt(clTexts.length);
+                    clText.setTextColor(Color.parseColor(clColors[rnd]));
+                    rnd = new Random().nextInt(clTexts.length);
+                    clColor.setText(clTexts[rnd]);
+                    rnd = new Random().nextInt(clTexts.length);
+                    clColor.setTextColor(Color.parseColor(clColors[rnd]));
+                } else if (clText.getText().toString().equals(clTexts[3]) && clColor.getCurrentTextColor() == Color.YELLOW) {
+                    pts += 1;
+                    points.setText(" " + (pts));
+                    int rnd = new Random().nextInt(clTexts.length);
+                    clText.setText(clTexts[rnd]);
+                    rnd = new Random().nextInt(clTexts.length);
+                    clText.setTextColor(Color.parseColor(clColors[rnd]));
+                    rnd = new Random().nextInt(clTexts.length);
+                    clColor.setText(clTexts[rnd]);
+                    rnd = new Random().nextInt(clTexts.length);
+                    clColor.setTextColor(Color.parseColor(clColors[rnd]));
+                } else if (clText.getText().toString().equals(clTexts[4]) && clColor.getCurrentTextColor() == Color.BLACK) {
+                    pts += 1;
+                    points.setText(" " + (pts));
+                    int rnd = new Random().nextInt(clTexts.length);
+                    clText.setText(clTexts[rnd]);
+                    rnd = new Random().nextInt(clTexts.length);
+                    clText.setTextColor(Color.parseColor(clColors[rnd]));
+                    rnd = new Random().nextInt(clTexts.length);
+                    clColor.setText(clTexts[rnd]);
+                    rnd = new Random().nextInt(clTexts.length);
+                    clColor.setTextColor(Color.parseColor(clColors[rnd]));
                 }
-            });
-        }
+            }
+        });
+
+        btnNo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (clText.getText().toString().equals(clTexts[0]) && clColor.getCurrentTextColor() != Color.RED) {
+                    pts += 1;
+                    points.setText(" " + (pts));
+                    int rnd = new Random().nextInt(clTexts.length);
+                    clText.setText(clTexts[rnd]);
+                    rnd = new Random().nextInt(clTexts.length);
+                    clText.setTextColor(Color.parseColor(clColors[rnd]));
+                    rnd = new Random().nextInt(clTexts.length);
+                    clColor.setText(clTexts[rnd]);
+                    rnd = new Random().nextInt(clTexts.length);
+                    clColor.setTextColor(Color.parseColor(clColors[rnd]));
+                } else if (clText.getText().toString().equals(clTexts[1]) && clColor.getCurrentTextColor() != Color.GREEN) {
+                    pts += 1;
+                    points.setText(" " + (pts));
+                    int rnd = new Random().nextInt(clTexts.length);
+                    clText.setText(clTexts[rnd]);
+                    rnd = new Random().nextInt(clTexts.length);
+                    clText.setTextColor(Color.parseColor(clColors[rnd]));
+                    rnd = new Random().nextInt(clTexts.length);
+                    clColor.setText(clTexts[rnd]);
+                    rnd = new Random().nextInt(clTexts.length);
+                    clColor.setTextColor(Color.parseColor(clColors[rnd]));
+                } else if (clText.getText().toString().equals(clTexts[2]) && clColor.getCurrentTextColor() != Color.BLUE) {
+                    pts += 1;
+                    points.setText(" " + (pts));
+                    int rnd = new Random().nextInt(clTexts.length);
+                    clText.setText(clTexts[rnd]);
+                    rnd = new Random().nextInt(clTexts.length);
+                    clText.setTextColor(Color.parseColor(clColors[rnd]));
+                    rnd = new Random().nextInt(clTexts.length);
+                    clColor.setText(clTexts[rnd]);
+                    rnd = new Random().nextInt(clTexts.length);
+                    clColor.setTextColor(Color.parseColor(clColors[rnd]));
+                } else if (clText.getText().toString().equals(clTexts[3]) && clColor.getCurrentTextColor() != Color.YELLOW) {
+                    pts += 1;
+                    points.setText(" " + (pts));
+                    int rnd = new Random().nextInt(clTexts.length);
+                    clText.setText(clTexts[rnd]);
+                    rnd = new Random().nextInt(clTexts.length);
+                    clText.setTextColor(Color.parseColor(clColors[rnd]));
+                    rnd = new Random().nextInt(clTexts.length);
+                    clColor.setText(clTexts[rnd]);
+                    rnd = new Random().nextInt(clTexts.length);
+                    clColor.setTextColor(Color.parseColor(clColors[rnd]));
+                } else if (clText.getText().toString().equals(clTexts[4]) && clColor.getCurrentTextColor() != Color.BLACK) {
+                    pts += 1;
+                    points.setText(" " + (pts));
+                    int rnd = new Random().nextInt(clTexts.length);
+                    clText.setText(clTexts[rnd]);
+                    rnd = new Random().nextInt(clTexts.length);
+                    clText.setTextColor(Color.parseColor(clColors[rnd]));
+                    rnd = new Random().nextInt(clTexts.length);
+                    clColor.setText(clTexts[rnd]);
+                    rnd = new Random().nextInt(clTexts.length);
+                    clColor.setTextColor(Color.parseColor(clColors[rnd]));
+                }
+            }
+        });
     }
 }

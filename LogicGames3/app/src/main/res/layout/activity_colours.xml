@@ -67,10 +67,10 @@
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="405dp"
-        android:layout_height="93dp"
+        android:layout_width="418dp"
+        android:layout_height="104dp"
         android:layout_marginTop="150dp"
-        android:text="Совпадает ли значение слова на первой табличке с цветом текста на нижней"
+        android:text="Совпадает ли значение текста на первой табличке с цветом текста на нижней"
         android:textSize="25sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
